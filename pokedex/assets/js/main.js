@@ -8,7 +8,8 @@ function converterPokemonToLi(pokemon) {
         <span class="name">${pokemon.name}</span>
         <div class="detail">
             <ol class="types">${types}</ol>
-            <img src="${pokemon.sprites.other.dream_world.front_default}" alt="Pokemon ${pokemon.name} stands in a neutral pose. Types: ${pokemon.types.map(type => type.type.name).join(', ')}. Number ${pokemon.id.toString().padStart(3, '0')} and name ${pokemon.name} are displayed. The environment is a digital card layout with a calm tone." />
+            <img src="${pokemon.sprites.other.dream_world.front_default}" alt="Pokemon ${pokemon.name} stands in a neutral pose. Types: ${pokemon.types.map(type => type.type.name)
+                .join(', ')}. Number ${pokemon.id.toString().padStart(3, '0')} and name ${pokemon.name} are displayed. The environment is a digital card layout with a calm tone." />
         </div>
     </li>
     `
@@ -20,3 +21,24 @@ pokeApi.getPokemons(0, 10).then((pokemons => {
     const newHtml = pokemons.map(converterPokemonToLi).join('')
     pokemonList.innerHTML += newHtml
 }))
+
+function showPokemonDetails(pokemon) {
+    const types = pokemon.types.map(type => `<spanclass="tag ${t.type.name}">${t.type.name}</span>`).join('')
+    const abilities = pokemon.abilities.map(a => `<li>${a.abilities.name}</li>`).join('')
+
+    const cardHtml = `
+        <div class="card">
+            <div class="card-top">
+                <img src="${pokemon.sprintes.other.dream_world.front_default}" 
+                alt="${pokemon.name}" class="poke-img">
+                <h2>${pokemon.name} <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span> </h2>
+                <div class="types">${types}</div>
+            </div>
+                <h3>${Habilidades}</h3>
+                <ul>${abilities}</ul>
+            <div class="card-bottom">
+            </div>
+        </div>
+        `
+        document.getElementById('pokemonDetails').innerHTML = cardHtml
+}
