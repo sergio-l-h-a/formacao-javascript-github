@@ -19,7 +19,7 @@ function converterPokemonToLi(pokemon) {
 const pokemonList = document.getElementById('pokemonList')
 pokeApi.getPokemons(0, 10).then((pokemons => {
     const newHtml = pokemons.map(converterPokemonToLi).join('')
-    pokemonList.innerHTML += newHtml
+    pokemonList.innerHTML = newHtml
     
     const pokemonItems = document.querySelectorAll('.pokemon')
     pokemonItems.forEach((item , index) => {
@@ -28,6 +28,7 @@ pokeApi.getPokemons(0, 10).then((pokemons => {
         })
     })
 }))
+
 
 function showPokemonDetails(pokemon) {
     const types = pokemon.types.map(type => `<span class="tag ${type.name}">${type.name}</span>`).join('')
