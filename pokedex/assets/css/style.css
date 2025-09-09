@@ -37,16 +37,18 @@ body {
 .card {
     background-color: #fff;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 400px;
-    margin: 30px auto;
+    max-width: 420px;
+    margin: 40px auto;
     text-align: center;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .card-top .poke-img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
 }
 
 .types {
@@ -55,29 +57,47 @@ body {
 
 .tag {
     display: inline-block;
-    margin: 5px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
+    margin: 4px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.85em;
     color: #fff;
+    text-transform: capitalize;
 }
 
 .tag.fire {background-color: #F08030;}
 .tag.water {background-color: #6890F0;}
 .tag.grass {background-color: #78C850;}
 .tag.electric {background-color: #F8D030;}
+.tag.poison { background-color: #A040A0; }
+.tag.flying { background-color: #A890F0; }
+.tag.bug { background-color: #A8B820; }
 
 /* Adicionar mais cores conforme os tipos */
 
 .card-bottom ul {
     list-style: none;
     padding: 0;
-    text-align: left;
+    margin-top: 20px;
 }
 
 .card-bottom li {
-    background-color: #f2f2f2;
-    margin: 5px 0;
+    background-color: #f4f4f4;
+    margin: 6px 0;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
+    font-size: 0.98em;
+}
+
+/* Layout responsivo */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .card-top .poke-img {
+        width: 140px;
+        height: 140px;
+    }
 }
