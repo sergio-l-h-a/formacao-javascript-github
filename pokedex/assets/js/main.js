@@ -31,7 +31,7 @@ pokeApi.getPokemons(0, 10).then((pokemons => {
 
 function showPokemonDetails(pokemon) {
     const types = pokemon.types.map(type => `<span class="tag ${type.name}">${type.name}</span>`).join('')
-    const abilities = pokemon.abilities.map(a => `<li>${a.abilities.name}</li>`).join('')
+    const abilities = pokemon.abilities.map(a => `<li>${a.name}</li>`).join('')
 
     const cardHtml = `
         <div class="card">
