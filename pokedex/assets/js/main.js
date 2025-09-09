@@ -13,7 +13,7 @@ function converterPokemonToLi(pokemon) {
         </div>
     </li>
     `
-//map(type => `<li class="type">${type.type.name}</li>`)
+
 }
 
 const pokemonList = document.getElementById('pokemonList')
@@ -32,7 +32,7 @@ pokeApi.getPokemons(0, 10).then((pokemons => {
 
 function showPokemonDetails(pokemon) {
     const types = pokemon.types.map(type => `<span class="tag ${type.name}">${type.name}</span>`).join('')
-    const abilities = pokemon.abilities.map(a => `<li>${a.name}</li>`).join('')
+    const abilities = pokemon.abilities.map(a => `<li>${a.ability.name}</li>`).join('')
 
     const cardHtml = `
         <div class="card">
@@ -41,7 +41,7 @@ function showPokemonDetails(pokemon) {
                 <h2>${pokemon.name} <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span> </h2>
                 <div class="types">${types}</div>
             </div>
-                <h3>${Habilidades}</h3>
+                <h3>Habilidades</h3>
                 <ul>${abilities}</ul>
             <div class="card-bottom">
             </div>
