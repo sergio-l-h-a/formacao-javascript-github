@@ -42,3 +42,10 @@ function showPokemonDetails(pokemon) {
         `
         document.getElementById('pokemonDetails').innerHTML = cardHtml
 }
+
+const pokemonItems = document.querySelectorAll('.pokemon')
+pokemonItems.forEach((item , index) => {
+    item.addEventListener('click', () => {
+        showPokemonDetails(pokemons[index])
+    })
+})
