@@ -20,6 +20,13 @@ const pokemonList = document.getElementById('pokemonList')
 pokeApi.getPokemons(0, 10).then((pokemons => {
     const newHtml = pokemons.map(converterPokemonToLi).join('')
     pokemonList.innerHTML += newHtml
+    
+    const pokemonItems = document.querySelectorAll('.pokemon')
+    pokemonItems.forEach((item , index) => {
+        item.addEventListener('click', () => {
+            showPokemonDetails(pokemons[index])
+        })
+    })
 }))
 
 function showPokemonDetails(pokemon) {
@@ -42,10 +49,3 @@ function showPokemonDetails(pokemon) {
         `
         document.getElementById('pokemonDetails').innerHTML = cardHtml
 }
-
-const pokemonItems = document.querySelectorAll('.pokemon')
-pokemonItems.forEach((item , index) => {
-    item.addEventListener('click', () => {
-        showPokemonDetails(pokemons[index])
-    })
-})
