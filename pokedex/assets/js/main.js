@@ -1,5 +1,5 @@
 function converterPokemonToLi(pokemon) {
-    const types = pokemon.types.map(type => `<li class"type">${type.types.name}</li>`).join('')
+    const types = pokemon.types.map(type => `<li class="type">${type.type.name}</li>`).join('')
 
     return `
     <li class="pokemon">
@@ -11,7 +11,7 @@ function converterPokemonToLi(pokemon) {
         </div>
     </li>
     `
-
+//map(type => `<li class="type">${type.type.name}</li>`)
 }
 
 const pokemonList = document.getElementById('pokemonList')
