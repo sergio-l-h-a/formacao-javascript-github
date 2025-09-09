@@ -36,8 +36,7 @@ function showPokemonDetails(pokemon) {
     const cardHtml = `
         <div class="card">
             <div class="card-top">
-                <img src="${pokemon.sprintes.other.dream_world.front_default}" 
-                alt="${pokemon.name}" class="poke-img">
+                <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}" class="poke-img">
                 <h2>${pokemon.name} <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span> </h2>
                 <div class="types">${types}</div>
             </div>
