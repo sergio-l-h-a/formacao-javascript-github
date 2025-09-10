@@ -88,6 +88,20 @@ body {
     border-radius: 8px;
     font-size: 0.98em;
 }
+#card-principal {
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 480px;
+    margin: 40px auto;
+}
+#card-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
 /* Layout responsivo */
 @media (max-width: 600px) {
