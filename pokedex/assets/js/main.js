@@ -8,7 +8,7 @@ function converterPokemonToLi(pokemon) {
             <ol class="types">
                 <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
                 <span class="name">${pokemon.name}</span>
-                ${types}
+                
             </ol>
             <img src="${pokemon.sprites.other.dream_world.front_default}" alt="Pokemon ${pokemon.name} stands in a neutral pose. Types: ${pokemon.types.map(type => type.type.name)
                 .join(', ')}. Number ${pokemon.id.toString().padStart(3, '0')} and name ${pokemon.name} are displayed. The environment is a digital card layout with a calm tone." />
